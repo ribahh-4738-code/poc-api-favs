@@ -46,4 +46,12 @@ class Client extends Authenticatable
             'password' => 'hashed'
         ];
     }
+
+    public function favorites()
+    {
+        return $this->belongsToMany(Product::class, 'fav', 'client_id', 'product_id')
+            ->using(Fav::class)
+            ->withPivot('review', 'id')
+            ->withTimestamps();
+    }
 }

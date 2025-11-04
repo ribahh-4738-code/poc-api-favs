@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ClientController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\FavController;
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
@@ -14,4 +15,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('client', ClientController::class)->except(['index', 'store']);
 
     Route::get('products/{id}', [ProductController::class, 'show']);
+
+    Route::post('client/{client}/favs', [FavController::class, 'store']);
+    Route::get('client/{client}/favs', [FavController::class, 'index']);
+    Route::delete('client/{client}/favs/{external_product_id}', [FavController::class, 'destroy']);
 });

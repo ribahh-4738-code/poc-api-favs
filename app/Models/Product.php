@@ -32,8 +32,9 @@ class Product extends Model
 
     public function clients()
     {
-        return $this->belongsToMany(Client::class, 'favs', 'product_id', 'client_id')
-            ->using(Fav::class) 
+        return $this->belongsToMany(Client::class, 'fav', 'product_id', 'client_id')
+            ->using(Fav::class)
+            ->withPivot('review', 'id')
             ->withTimestamps();
     }
 }
