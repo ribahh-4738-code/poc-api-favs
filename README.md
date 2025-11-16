@@ -3,13 +3,13 @@
 ### Clonar o projeto com: 
 
 ```
-git clone git@github.com:ribahh-4738-code/aiqfome-favs.git
+git clone git@github.com:ribahh-4738-code/poc-api-favs.git
 ```
 
-### Será criada a pasta aiqfome-favs.
+### Será criada a pasta poc-api-favs.
 
 ```
-cd aiqfome-favs
+cd poc-api-favs
 ```
 
 ### Copie os seguintes dados para o arquivo .env
@@ -18,7 +18,7 @@ cd aiqfome-favs
 DB_CONNECTION=pgsql
 DB_HOST=pgsql
 DB_PORT=5432
-DB_DATABASE=aiqfome
+DB_DATABASE=pocapifavs
 DB_USERNAME=sail
 DB_PASSWORD=dev098
 ```
